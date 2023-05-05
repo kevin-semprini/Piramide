@@ -1,27 +1,38 @@
 # Piramide
 
-Quando si avvia un progetto come la costruzione di una piramide, è meglio pensarci due volte.
+### esercizio in C# console che con il numero di mattoni disponibili permette di sapere il numero di piani costribili a patto che siano in modo piramidale, ovvero che si ##espandino di 1 in ogni lato per ogni piano, inoltre restituisce anche il numero di mattoni
 
-Il tuo compito oggi è scrivere un programma che calcoli l'altezza massima di una piramide (in piani) dato un certo numero di cubi di pietra.
+# Codice
 
-Ipotizzando che:
+### casi speciali:
 
-- i piani della piramide siano quadrati
-- la piramide da costruire sia compatta, cioè non ci siano cavità al suo interno. 
-- ogni piano è quadrato, con una lunghezza laterale inferiore di due rispetto a quella sottostante.
-- il primo piano è sempre di un mattone
+```C#
 
-Esempi:
+if (mattoni == 0){
+  return 0;
+}
+if (mattoni == 1){
+  piani = 1;
+  return piani;
+}
+if (mattoni < 0){
+  return 0;
+}
 
-- il primo piano ha un mattone, il secondo 9 mattoni, il terzo 25 e così via
-- con 1 mattone la piramide è alta 1 piano
-- con 84 mattoni la piramide è alta 4 piani
+```
 
-Va bene se hai blocchi rimanenti, purché tu costruisca una piramide completa.
+### codice:
 
-Sviluppare:
+```C#
+while (mattoni > 8){
+  mattoni = mattoni  - 8;
+  piani++;
+}
+  piani++;
+  
+  return piani;
 
-- il metodo int Piani( int mattoni ) che torna il numero di piani
-- il metodo int Rimanenti( int mattoni ) che torna il numero di mattoni rimasti dopo la costruzione
+```
 
 
+#### il programma è incompleto
